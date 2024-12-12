@@ -1,8 +1,14 @@
 import React from 'react';
-import CategoryList from '../../components/CategoryList';
+import { CategoryList, SelectDeliveryMethods } from '../../components';
 import './menu.css';
 import bgHeader from './../../../../assets/img/bg-header.jpg'
-import logo from './../../../../assets/img/logo.jpeg'
+import logo from './../../../../assets/img/logo.jpg'
+import giftIcon from './../../../../assets/icons/gift.png'
+import { isOpen, WorkingHours } from '../../utils/workingHours'
+import { formatNumberCustom } from '../../utils/formatNumberCustom'
+import { getStoreStatus } from '../../utils/getStoreStatus';
+
+
 
 // Definindo as interfaces para os dados
 interface Item {
@@ -17,14 +23,30 @@ interface Category {
   items: Item[];
 }
 
+interface StoreInfo {
+  storeName: string;
+  storeLocation: string;
+  storeType: string;
+  distance: number;
+  minimumOrderValue: number;
+  workingHours: WorkingHours;
+  estimatedDeliveryTime: string;
+  deliveryMethods: string[];
+  coupons: string[];
+}
+
 interface MenuProps {
-  title: string;
+  storeInfos: StoreInfo[];
   items: string[];
   categories: Category[];
 }
 
 // Componente Menu
-const Menu: React.FC<MenuProps> = ({ title, items, categories }) => {
+const Menu: React.FC<MenuProps> = ({ storeInfos, items, categories }) => {
+  const status = isOpen(storeInfos[0].workingHours);
+  // Definir a cor do status (verde para "Aberto", vermelho para "Fechado")
+  const statusColor = status === "Aberto" ? "green" : "red";
+
   return (
     <div>
       <div className="app-container">
@@ -36,8 +58,27 @@ const Menu: React.FC<MenuProps> = ({ title, items, categories }) => {
             <div>
               <img className="logo-image" src={logo} alt="Logo" />
             </div>
-            <h4>{title}</h4>
+            <div className="info-general-texts">
+              <h4>{storeInfos[0].storeName} -  {storeInfos[0].storeLocation}</h4>
+              <h5>{storeInfos[0].storeType} • {storeInfos[0].distance} km • Min. R$ {formatNumberCustom(storeInfos[0].minimumOrderValue, 2)}</h5>
+            </div>
           </div>
+          <div className='info-delivery'>
+            <SelectDeliveryMethods deliveryMethods={storeInfos[0].deliveryMethods} />
+
+            <h5>
+              {getStoreStatus(storeInfos[0].workingHours)}, {storeInfos[0].estimatedDeliveryTime} min • <span style={{ color: statusColor }}>
+                {status === "Aberto" ? "Aberto" : "Fechado"}
+              </span>
+            </h5>
+          </div>
+
+          <div className='cupons'>
+            {/* #276591 */}
+            <img className="gift-icon" src={giftIcon} alt="" />
+            <h5 className='cupom-text' >{storeInfos[0].coupons[0].description}</h5>
+          </div>
+          
 
           {/* <p>Este é o conteúdo da página que começa abaixo da imagem fixa.</p>
           <p>O fundo branco está cobrindo a parte inferior da imagem devido ao border-radius nos cantos superiores.</p> */}

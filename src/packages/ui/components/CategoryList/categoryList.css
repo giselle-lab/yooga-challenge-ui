@@ -17,12 +17,13 @@
   .item-card {
     width: 45%;
     margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
+    /* padding: 10px; */
+    /* border: 1px solid #ddd; */
     border-radius: 8px;
     background-color: #fff;
     display: flex;
     flex-direction: row;
+    gap: 20px;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -39,10 +40,30 @@
     margin-top: 10px;
   }
   
-  .item-info h4 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+  .item-info h5 {
+    color: #333;
+    font-weight: 600;
   }
+
+  .category h4 {
+    margin: 0;
+    color: #333;
+    text-align: start;
+  }
+
+  /* .info-general-texts h4 {
+    margin: 0;
+    color: #242424;
+    text-align: start;
+  }
+
+  .info-general-texts h5 {
+    color: #777;
+    margin: 0;
+    font-weight: 400;
+    text-align: start;
+  } */
+  
   
   .item-info p {
     font-size: 1rem;
