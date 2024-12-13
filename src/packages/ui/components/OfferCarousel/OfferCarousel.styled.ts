@@ -5,6 +5,7 @@ export const CategoryTitle = styled.h4`
   color: #333;
   text-align: start;
   margin-bottom:15px;
+  font-weight: 600;
   /* font-size: 1.5rem; */
 `;
 export const CarouselContainer = styled.div`
@@ -15,7 +16,7 @@ export const CarouselContainer = styled.div`
   flex-direction: column;
   /* padding: 16px; */
   scroll-behavior: smooth;
-  margin: 40px 0 50px;
+  margin: 60px 0 50px;
   /* position: absolute; */
 
   /* Estilização opcional para remover a barra de rolagem visível */
@@ -57,7 +58,8 @@ export const EmptyMessage = styled.p`
   padding: 16px;
   text-align: center;
   font-size: 1rem;
-  color: #555;
+  color: #757575;
+  font-weight: 400;
 `;
 
 export const OriginalPrice = styled.span`
@@ -69,7 +71,7 @@ export const OriginalPrice = styled.span`
 
 export const DiscountedPrice = styled.span`
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   color: #444;
   margin-right: 8px;
 `;
@@ -78,7 +80,7 @@ export const DiscountBadge = styled.span`
   background-color: #b8e5fa;
   font-size: 11px;
   color: #276591;
-  font-weight: bold;
+  font-weight: 600;
   padding: 2px 6px;
   border-radius: 12px;
   padding: 5px;
@@ -87,12 +89,13 @@ export const DiscountBadge = styled.span`
 
 export const ItemPrice = styled.span`
 font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   color: #444;
   margin-right: 8px;
 `;
 
-export const ItemName = styled.h5`
+export const ItemName = styled.div`
+  font-size: 12px;
   margin: 0px;
   color: #333;
   font-weight: 600;

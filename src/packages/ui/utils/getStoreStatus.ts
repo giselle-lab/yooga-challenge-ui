@@ -58,5 +58,5 @@ export function getStoreStatus(workingHours: WorkingHours): string {
         }
     }
 
-    return "-"; // Caso não haja nenhum dia aberto (pode ser útil para mostrar em casos específicos)
+    return "Outro"; // Caso não haja nenhum dia aberto (pode ser útil para mostrar em casos específicos)
 }

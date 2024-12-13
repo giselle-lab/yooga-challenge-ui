@@ -4,30 +4,65 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  position: relative; /* Garante que o select não seja influenciado por outros elementos */
+  position: relative;
+  width: 150px;
 `;
 
-export const Select = styled.select`
+export const SelectContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const SelectHeader = styled.div<{ isDropdownOpen: boolean; arrow: string }>`
   background-color: white;
   color: #333;
-  padding: 8px;
+  padding: 8px 17px;
   border: 1px solid #ccc;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
-  appearance: none; /* Remove estilos padrão do navegador */
-  width: 150px; /* Define largura padrão */
-  max-width: 300px; /* Define um tamanho máximo */
-  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 
-  &:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 3px #007bff;
+  &::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-image: url(${(props) => props.arrow});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    right: 10px; /* Espaço à direita */
+    transform: ${(props) => (props.isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)')};
+    transition: transform 0.3s ease;
   }
 `;
 
-export const Option = styled.option`
+export const OptionsList = styled.ul`
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
   background-color: white;
-  color: black;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 8px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  list-style: none;
+`;
+
+export const OptionItem = styled.li`
+  padding: 8px 17px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
 `;

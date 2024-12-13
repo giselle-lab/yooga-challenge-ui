@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import {
   Container,
-  Select,
-  Option,
+  SelectContainer,
+  SelectHeader,
+  OptionsList,
+  OptionItem,
 } from './SelectDeliveryMethodsStyles.styled.ts';
+import ArrowDown from '../../../../assets/icons/arrow.png';
 
 interface SelectDeliveryMethodsProps {
   deliveryMethods: string[];
@@ -11,24 +14,36 @@ interface SelectDeliveryMethodsProps {
 
 const SelectDeliveryMethods: React.FC<SelectDeliveryMethodsProps> = ({ deliveryMethods }) => {
   const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState<string>(deliveryMethods[0]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  const handleDeliveryMethodChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedDeliveryMethod(event.target.value);
+  const handleDeliveryMethodClick = (method: string) => {
+    setSelectedDeliveryMethod(method);
+    setIsDropdownOpen(false); // Fecha o dropdown
   };
 
   return (
     <Container>
-      <Select
-        id="delivery-method"
-        value={selectedDeliveryMethod}
-        onChange={handleDeliveryMethodChange}
-      >
-        {deliveryMethods.map((method, index) => (
-          <Option key={index} value={method}>
-            {method}
-          </Option>
-        ))}
-      </Select>
+      <SelectContainer>
+        <SelectHeader
+          onClick={() => setIsDropdownOpen((prev) => !prev)} // Alterna o dropdown
+          isDropdownOpen={isDropdownOpen}
+          arrow={ArrowDown}
+        >
+          {selectedDeliveryMethod}
+        </SelectHeader>
+        {isDropdownOpen && (
+          <OptionsList>
+            {deliveryMethods.map((method, index) => (
+              <OptionItem
+                key={index}
+                onClick={() => handleDeliveryMethodClick(method)}
+              >
+                {method}
+              </OptionItem>
+            ))}
+          </OptionsList>
+        )}
+      </SelectContainer>
     </Container>
   );
 };

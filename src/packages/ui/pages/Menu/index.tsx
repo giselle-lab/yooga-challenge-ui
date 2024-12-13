@@ -68,7 +68,7 @@ const Menu: React.FC<MenuProps> = ({ storeInfos, items, categories }) => {
           <InfoGeneralTexts>
             <h4>{storeInfos[0].storeName} -  {storeInfos[0].storeLocation}</h4>
             <h5>
-              {storeInfos[0].storeType} • {formatNumberCustom(storeInfos[0].distance)} km • Min. R$ {formatNumberCustom(storeInfos[0].minimumOrderValue, 2)}
+              {storeInfos[0].storeType} • {formatNumberCustom(storeInfos[0].distance,1)} km • Min. R$ {formatNumberCustom(storeInfos[0].minimumOrderValue, 2)}
             </h5>
           </InfoGeneralTexts>
         </InfoGeneral>

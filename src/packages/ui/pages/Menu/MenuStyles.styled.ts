@@ -51,10 +51,11 @@ export const InfoGeneralTexts = styled.div`
 text-align: start;
 h4 {
   color: #333;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0;
 }
 h5 {
+  font-size: 12px;
   color: #757575;
   margin: 4px 0 0;
   font-weight: 400;
@@ -67,9 +68,9 @@ display: flex;
 gap: 20px;
 align-items: center;
 h5 {
-  /* font-size: 14px; */
+  font-size: 12px;
   font-weight: 400;
-  color: #555;
+  color: #757575;
   margin: 4px 0;
 }
 `;
@@ -87,10 +88,11 @@ height: 14px;
 margin-right: 8px;
 `;
 
-export const CouponText = styled.h5`
-margin: 0px;
-font-weight: 600;
-color: #277691;
+export const CouponText = styled.div`
+  margin: 0px;
+  font-weight: 600;
+  color: #277691;
+  font-size: 12px;
 `;
 
 export const CarouselContainer = styled.div`
