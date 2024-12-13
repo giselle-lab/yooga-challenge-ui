@@ -89,8 +89,8 @@ margin-right: 8px;
 
 export const CouponText = styled.h5`
 margin: 0px;
-font-weight: bold;
-color: #276591;
+font-weight: 600;
+color: #277691;
 `;
 
 export const CarouselContainer = styled.div`

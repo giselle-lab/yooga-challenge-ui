@@ -58,8 +58,8 @@ const OfferCarousel: React.FC<OfferCarouselProps> = ({ categories }) => {
           <OfferInfo>
             <ItemName>{item.name}</ItemName>
             <div>
-                      <DiscountedPrice>R$ {formatNumberCustom(item.discount.discountedPrice,2)}</DiscountedPrice>
-                      <OriginalPrice>R$ {formatNumberCustom(item.price,2)}</OriginalPrice>
+                      <DiscountedPrice>R${formatNumberCustom(item.discount.discountedPrice,2)}</DiscountedPrice>
+                      <OriginalPrice>R${formatNumberCustom(item.price,2)}</OriginalPrice>
                       <DiscountBadge>-{item.discount.discount}</DiscountBadge>
                     </div>
   

@@ -55,8 +55,8 @@ const CategoryList: React.FC<CategoryListProps> = ({ categories }) => {
                   <ItemDescription>{truncateText(item.description,90)}</ItemDescription>
                   {item.discount ? (
                     <div>
-                      <DiscountedPrice>R$ {formatNumberCustom(item.discount.discountedPrice,2)}</DiscountedPrice>
-                      <OriginalPrice>R$ {formatNumberCustom(item.price,2)}</OriginalPrice>
+                      <DiscountedPrice>R${formatNumberCustom(item.discount.discountedPrice,2)}</DiscountedPrice>
+                      <OriginalPrice>R${formatNumberCustom(item.price,2)}</OriginalPrice>
                       <DiscountBadge>-{item.discount.discount}</DiscountBadge>
                     </div>
                   ) : (
