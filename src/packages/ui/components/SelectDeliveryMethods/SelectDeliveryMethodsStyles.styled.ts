@@ -15,7 +15,8 @@ export const SelectContainer = styled.div`
 
 export const SelectHeader = styled.div<{ isDropdownOpen: boolean; arrow: string }>`
   background-color: white;
-  color: #333;
+  color: #646464;
+  font-weight: 600;
   padding: 8px 17px;
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -50,7 +51,7 @@ export const OptionsList = styled.ul`
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 8px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   z-index: 10;
   list-style: none;
 `;

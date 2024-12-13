@@ -12,7 +12,8 @@ import {
     Cupons, 
     GiftIcon, 
     CouponText,
-    CarouselContainer
+    CarouselContainer,
+    Divisoria
 } from './MenuStyles.styled.ts';
 import bgHeader from './../../../../assets/img/bg-header.jpg';
 import logo from './../../../../assets/img/logo.jpg';
@@ -84,8 +85,11 @@ const Menu: React.FC<MenuProps> = ({ storeInfos, items, categories }) => {
           <GiftIcon src={giftIcon} alt="Gift Icon" />
           <CouponText>{storeInfos[0].coupons[0].description}</CouponText>
         </Cupons>
+        <Divisoria />
         <CarouselContainer>
         <OfferCarousel categories={categories} />
+        <Divisoria />
+
         </CarouselContainer>
         <CategoryList categories={categories} />
       </Content>

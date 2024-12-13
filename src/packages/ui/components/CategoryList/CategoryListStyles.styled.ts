@@ -20,14 +20,15 @@ export const ItemsContainer = styled.div`
 
 export const ItemCard = styled.div`
   width: 45%;
-  margin: 15px 0 20px;
-  border-radius: 8px;
+  margin: 15px 0 5px;
+  /* border-radius: 8px; */
   background-color: #fff;
   display: flex;
   flex-direction: row;
   gap: 20px;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #dfdfdf;
+  padding-bottom: 20px;
 
   @media (max-width: 768px) {
     width: 100%;

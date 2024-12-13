@@ -16,7 +16,7 @@ export const CarouselContainer = styled.div`
   flex-direction: column;
   /* padding: 16px; */
   scroll-behavior: smooth;
-  margin: 60px 0 50px;
+  /* margin: 60px 0 50px; */
   /* position: absolute; */
 
   /* Estilização opcional para remover a barra de rolagem visível */
@@ -27,13 +27,10 @@ export const CarouselContainer = styled.div`
 
 export const OfferCard = styled.div`
   display: inline-block;
-  background: #f9f9f9;
-  /* border: 1px solid #ddd; */
   border-radius: 8px;
   margin-right: 16px;
   width: 160px;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   &:last-child {
     margin-right: 0;

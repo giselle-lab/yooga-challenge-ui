@@ -76,10 +76,14 @@ h5 {
 `;
 
 export const Cupons = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background-color: #def4ff;
+  padding: 2px 6px;
+  border-radius: 12px;
+  padding: 5px;
 `;
 
 export const GiftIcon = styled.img`
@@ -93,9 +97,15 @@ export const CouponText = styled.div`
   font-weight: 600;
   color: #277691;
   font-size: 12px;
+  
 `;
 
 export const CarouselContainer = styled.div`
   width: 90vw;
 
 `;
+
+export const Divisoria = styled.div`
+  border-bottom: 2px solid #dfdfdf;
+  margin: 30px 0 30px;
+`

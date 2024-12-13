@@ -50,26 +50,26 @@ const OfferCarousel: React.FC<OfferCarouselProps> = ({ categories }) => {
 
   return (<>
     <CarouselContainer>
-    <CategoryTitle>{'Produtos em oferta 💙'}</CategoryTitle>
+      <CategoryTitle>{'Produtos em oferta 💙'}</CategoryTitle>
       <div>
-      {discountedItems.map((item, index) => (
-        <OfferCard key={index}>
-          <OfferImage src={item.image} alt={item.name} />
-          <OfferInfo>
-            <ItemName>{item.name}</ItemName>
-            <div>
-                      <DiscountedPrice>R${formatNumberCustom(item.discount.discountedPrice,2)}</DiscountedPrice>
-                      <OriginalPrice>R${formatNumberCustom(item.price,2)}</OriginalPrice>
-                      <DiscountBadge>-{item.discount.discount}</DiscountBadge>
-                    </div>
-  
-          </OfferInfo>
-          
-        </OfferCard>
-      ))}
+        {discountedItems.map((item, index) => (
+          <OfferCard key={index}>
+            <OfferImage src={item.image} alt={item.name} />
+            <OfferInfo>
+              <ItemName>{item.name}</ItemName>
+              <div>
+                <DiscountedPrice>R${formatNumberCustom(item.discount.discountedPrice, 2)}</DiscountedPrice>
+                <OriginalPrice>R${formatNumberCustom(item.price, 2)}</OriginalPrice>
+                <DiscountBadge>-{item.discount.discount}</DiscountBadge>
+              </div>
+
+            </OfferInfo>
+
+          </OfferCard>
+        ))}
       </div>
     </CarouselContainer>
-    </>
+  </>
   );
 };
 
