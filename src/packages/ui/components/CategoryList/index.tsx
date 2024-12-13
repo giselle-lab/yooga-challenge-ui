@@ -1,5 +1,25 @@
 import React from 'react';
-import './CategoryList.css';
+import {
+  CategoryContainer,
+  CategoryTitle,
+  ItemsContainer,
+  ItemCard,
+  ItemImage,
+  ItemInfo,
+  ItemName,
+  ItemDescription,
+  ItemPrice,
+  DiscountedPrice,
+  OriginalPrice,
+  DiscountBadge,
+} from './CategoryListStyles.styled.ts';
+import { truncateText } from '../../utils/truncateText.ts';
+import { formatNumberCustom } from '../../utils/formatNumberCustom.ts';
+
+interface Discount {
+  discountedPrice: string;
+  percentage: string;
+}
 
 // Interfaces para definir a estrutura das categorias e itens
 interface Item {
@@ -7,6 +27,7 @@ interface Item {
   name: string;
   description: string;
   price: string;
+  discount?: Discount;
 }
 
 interface Category {
@@ -23,26 +44,32 @@ const CategoryList: React.FC<CategoryListProps> = ({ categories }) => {
   return (
     <div>
       {categories.map((category, index) => (
-        <div key={index} className="category">
-          <h4>{category.title}</h4>
-          <div className="items-container">
+        <CategoryContainer key={index}>
+          <CategoryTitle>{category.title}</CategoryTitle>
+          <ItemsContainer>
             {category.items.map((item, itemIndex) => (
-              <div key={itemIndex} className="item-card">
-                <img className="item-image" src={item.image} alt={item.name} />
-                <div className="item-info">
-                  <h5>{item.name}</h5>
-                  <p>{item.description}</p>
-                  <span>{item.price}</span>
-                </div>
-              </div>
+              <ItemCard key={itemIndex}>
+                <ItemImage src={item.image} alt={item.name} />
+                <ItemInfo>
+                  <ItemName>{item.name}</ItemName>
+                  <ItemDescription>{truncateText(item.description,90)}</ItemDescription>
+                  {item.discount ? (
+                    <div>
+                      <DiscountedPrice>R$ {formatNumberCustom(item.discount.discountedPrice,2)}</DiscountedPrice>
+                      <OriginalPrice>R$ {formatNumberCustom(item.price,2)}</OriginalPrice>
+                      <DiscountBadge>-{item.discount.discount}</DiscountBadge>
+                    </div>
+                  ) : (
+                    <ItemPrice>R$ {formatNumberCustom(item.price,2)}</ItemPrice>
+                  )}
+                </ItemInfo>
+              </ItemCard>
             ))}
-          </div>
-        </div>
+          </ItemsContainer>
+        </CategoryContainer>
       ))}
     </div>
   );
 };
-
-//#276591
 
 export default CategoryList;

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import './SelectDeliveryMethods.css';
+import {
+  Container,
+  Select,
+  Option,
+} from './SelectDeliveryMethodsStyles.styled.ts';
 
 interface SelectDeliveryMethodsProps {
   deliveryMethods: string[];
@@ -13,23 +17,19 @@ const SelectDeliveryMethods: React.FC<SelectDeliveryMethodsProps> = ({ deliveryM
   };
 
   return (
-    <div className="container">
-      <label htmlFor="delivery-method" className="label">
-        Escolha o método de entrega:
-      </label>
-      <select
+    <Container>
+      <Select
         id="delivery-method"
-        className="select"
         value={selectedDeliveryMethod}
         onChange={handleDeliveryMethodChange}
       >
         {deliveryMethods.map((method, index) => (
-          <option key={index} value={method}>
+          <Option key={index} value={method}>
             {method}
-          </option>
+          </Option>
         ))}
-      </select>
-    </div>
+      </Select>
+    </Container>
   );
 };
 
