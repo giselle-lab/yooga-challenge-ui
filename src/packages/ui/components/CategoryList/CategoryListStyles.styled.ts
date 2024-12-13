@@ -9,7 +9,6 @@ export const CategoryTitle = styled.h4`
   color: #333;
   text-align: start;
   font-weight: 600;
-  /* font-size: 1.5rem; */
 `;
 
 export const ItemsContainer = styled.div`
@@ -21,7 +20,6 @@ export const ItemsContainer = styled.div`
 export const ItemCard = styled.div`
   width: 45%;
   margin: 15px 0 5px;
-  /* border-radius: 8px; */
   background-color: #fff;
   display: flex;
   flex-direction: row;
@@ -49,7 +47,6 @@ export const ItemImage = styled.img`
 
 export const ItemInfo = styled.div`
   text-align: left;
-  /* margin-top: 10px; */
 `;
 
 export const ItemName = styled.div`
@@ -60,19 +57,12 @@ export const ItemName = styled.div`
 `;
 
 export const ItemDescription = styled.div`
-  /* font-size: 1rem; */
   font-size: 12px;
   margin: 0px;
   color: #757575;
   font-weight: 400;
   margin-bottom: 5px;
 `;
-
-// export const ItemPrice = styled.span`
-//   font-size: 1.1rem;
-//   font-weight: bold;
-//   color: #2d72d9;
-// `;
 
 export const OriginalPrice = styled.span`
   font-size: 12px;
@@ -96,7 +86,6 @@ export const DiscountBadge = styled.span`
   padding: 2px 6px;
   border-radius: 12px;
   padding: 5px;
-  /* font-size: 0.8rem; */
 `;
 
 export const ItemPrice = styled.span`

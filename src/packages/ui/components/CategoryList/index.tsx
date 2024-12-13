@@ -21,7 +21,6 @@ interface Discount {
   percentage: string;
 }
 
-// Interfaces para definir a estrutura das categorias e itens
 interface Item {
   image: string;
   name: string;
@@ -35,7 +34,6 @@ interface Category {
   items: Item[];
 }
 
-// Props do componente
 interface CategoryListProps {
   categories: Category[];
 }

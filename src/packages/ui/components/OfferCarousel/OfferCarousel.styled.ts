@@ -6,20 +6,14 @@ export const CategoryTitle = styled.h4`
   text-align: start;
   margin-bottom:15px;
   font-weight: 600;
-  /* font-size: 1.5rem; */
 `;
 export const CarouselContainer = styled.div`
-  /* max-width: 90%; Limita o tamanho do contêiner ao tamanho da viewport */
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
   flex-direction: column;
-  /* padding: 16px; */
   scroll-behavior: smooth;
-  /* margin: 60px 0 50px; */
-  /* position: absolute; */
-
-  /* Estilização opcional para remover a barra de rolagem visível */
+  
   &::-webkit-scrollbar {
     display: none;
   }
@@ -45,7 +39,6 @@ export const OfferImage = styled.img`
 `;
 
 export const OfferInfo = styled.div`
-  /* padding: 8px 12px; */
   display: flex;
   align-items: start;
   flex-direction: column;
