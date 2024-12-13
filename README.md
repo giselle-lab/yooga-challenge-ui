@@ -17,13 +17,14 @@ Siga os passos abaixo para rodar o projeto localmente:
    git clone https://github.com/giselle-lab/yooga-challenge-ui
 
 2. **Entre na pasta do projeto**
-cd yooga-challenge-ui
+   ```bash
+   cd yooga-challenge-ui
 
-3. **Instale as dependências**
+4. **Instale as dependências**
     ```bash
     npm install
 
-4. **Inicie o servidor de desenvolvimento**
+5. **Inicie o servidor de desenvolvimento**
 
     ```bash
     npm run dev
